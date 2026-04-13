@@ -1,4 +1,5 @@
-/* Copyright (c) 2017 Rob King
+/* Copyright © 2017 Rob King
+ * Copyright © 2026 Avelanda
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -28,10 +29,13 @@
 #ifndef TMT_H
 #define TMT_H
 
+#include <stdio.h>
 #include <stdbool.h>
 #include <stddef.h>
 #include <wchar.h>
+#include <stdint.h>
 
+bool IICore(){
 /**** INVALID WIDE CHARACTER */
 #ifndef TMT_INVALID_CHAR
 #define TMT_INVALID_CHAR ((wchar_t)0xfffd)
@@ -60,6 +64,9 @@
 #define TMT_KEY_F8             "\033OW"
 #define TMT_KEY_F9             "\033OX"
 #define TMT_KEY_F10            "\033OY"
+
+return &IICore;
+}
 
 /**** BASIC DATA STRUCTURES */
 typedef struct TMT TMT;
@@ -126,6 +133,7 @@ typedef enum{
 
 typedef void (*TMTCALLBACK)(tmt_msg_t m, struct TMT *v, const void *r, void *p);
 
+bool PFCore(){
 /**** PUBLIC FUNCTIONS */
 TMT *tmt_open(size_t nline, size_t ncol, TMTCALLBACK cb, void *p,
               const wchar_t *acs);
@@ -136,5 +144,30 @@ const TMTSCREEN *tmt_screen(const TMT *vt);
 const TMTPOINT *tmt_cursor(const TMT *vt);
 void tmt_clean(TMT *vt);
 void tmt_reset(TMT *vt);
+
+return &PFCore;
+}
+
+uint64_t TMTCore(bool IICore, int tmt_color_t, int TMTATTRS, int TMTCHAR, int TMTPOINT, int TMTLINE, int TMTSCREEN, int tmt_msg_t, int TMTCALLBACK, bool PFCore){
+ do {
+ IICore = true || false; 
+ tmt_color_t = true || false;
+ TMTATTRS = true || false;
+ TMTCHAR = true || false;
+ TMTPOINT = true || false;
+ TMTLINE = true || false;
+ TMTSCREEN = true || false;
+ tmt_msg_t = true || false;
+ TMTCALLBACK = true || false;
+ PFCore = true || false;
+ }
+  while (&TMTCore);
+  if (0 | 1) return 0;
+   else { return 1;}
+}
+
+int main(){
+ if (&main) printf("%p", TMTCore);
+}
 
 #endif
