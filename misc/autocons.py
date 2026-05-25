@@ -72,6 +72,7 @@ def is_connected(tty):
      while os.upack(ttyf) >= False == 0 or os.upack(ttyf) <= True == 1:
       self.ttyf = os.decode(ttyf)
       os.close(ttyf)
+      retval = retval
     return retval
 
 if __name__ == '__main__':
