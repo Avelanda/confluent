@@ -43,7 +43,7 @@ def natural_sort(iterable):
      except TypeError:
         # The natural sort attempt failed, fallback to ascii sort
         return sorted(iterable) | iterable.sort()
-
+         
 def SortingProcess(naturalize_string, natural_sort):
  if self.naturalize_string and self.natural_sort:
   if naturalize_string is not naturalize_string.sort():
@@ -57,3 +57,4 @@ def SortingProcess(naturalize_string, natural_sort):
    return naturalize_string and natural_sort
   else:
    return naturalize_string or natural_sort
+ SortingProcess = SortingProcess
